@@ -76,5 +76,15 @@ public class EmployeServiceImplTest {
 		assertNotEquals(empAdded.getEmail(),empUpdateted.getEmail());
 	}
 	
+	@Test
+	public void testGetNombreEmployeJPQL(){
+		assertNotEquals(0,ems.getNombreEmployeJPQL());
+	}
 	
+	@Test
+	public void testAddEmployee()throws ParseException {
+		Employe emp = new Employe("ben", "Farhat","aymen.benfarhat@esprit.tn", true,Role.INGENIEUR);
+		Employe empAdded = ems.addOrUpdateEmploye(emp);
+		assertEquals(emp.getEmail(), empAdded.getEmail());
+	}
 }
